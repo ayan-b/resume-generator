@@ -34,5 +34,7 @@ Want to contribute? Awesome! :tada: You can contribute by:
 - Submitting bugs that you have encountered
 - Submitting pull requests for the existing issues
 
+<hr>
+
 <a name="moban_footnote">1</a>: The project uses `moban`. `moban` offers a wide variety of configurations.
 Find more at https://moban.readthedocs.io .
