@@ -14,7 +14,7 @@ tex-config:
 jobs:
   include:
     - stage: generate-pdf
-      if: sender != "traviscibot"
+      if: sender != "ayan-b"
 
 script:
   - docker pull strauman/travis-latexbuild:small # select small texlive scheme
