@@ -3,7 +3,6 @@ language: generic
 services: docker
 notifications:
   email: false
-if: sender != "traviscibot"
 
 # taken from: https://github.com/Strauman/travis-latexbuild
 tex-config:
@@ -24,4 +23,5 @@ after_success:
   - mv resume/**.pdf resume/pdf/
   - git add resume/pdf/**.pdf
   - git commit -m "Run tex to generate pdf"
+  if: sender != "traviscibot"
   - git push https://ayan-b:${GITHUB_TOKEN}@github.com/ayan-b/resume-generator HEAD:master
