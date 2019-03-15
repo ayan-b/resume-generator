@@ -11,7 +11,7 @@
 - Then, install all the necessary dependencies from `requirements.txt`:
   > pip install -r requirements.txt
 - Check the data file at `config/data.yml`. Change it according to your profile.
-- Now run `moban` in your terminal to make your resume![^1]
+- Now run `moban` in your terminal to make your resume!<sup>[1](#moban_footnote)</sup>
 
 You can check the rendered pdf files inside `resume/pdf` folder.
 
@@ -34,5 +34,5 @@ Want to contribute? Awesome! :tada: You can contribute by:
 - Submitting bugs that you have encountered
 - Submitting pull requests for the existing issues
 
-[^1]: The project uses `moban`. `moban` offers a wide variety of configurations.
+<a name="moban_footnote">1</a>: The project uses `moban`. `moban` offers a wide variety of configurations.
 Find more at https://moban.readthedocs.io .
