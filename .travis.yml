@@ -14,7 +14,6 @@ tex-config:
 jobs:
   include:
     - stage: generate-pdf
-      if: sender == "ayan-b"
 
 script:
   - docker pull strauman/travis-latexbuild:small # select small texlive scheme
@@ -27,5 +26,5 @@ after_success:
   - git config user.name "traviscibot"
   - mv resume/**.pdf resume/pdf/
   - git add resume/pdf/**.pdf
-  - git commit -m "Run tex to generate pdf"
+  - git commit -m "Run tex to generate pdf [skip ci]"
   - git push https://ayan-b:${GITHUB_TOKEN}@github.com/ayan-b/resume-generator HEAD:master
