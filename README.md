@@ -5,7 +5,7 @@
 ## Instructions
 
 - First clone the repository by running:
-  > git clone https://github.com/ayan-b/resume-generator
+  > `git clone https://github.com/ayan-b/resume-generator`
   or you can also download:  
   ![screenshot](./screenshot.png)
 - Then, install all the necessary dependencies from `requirements.txt`:
