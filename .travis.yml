@@ -1,0 +1,27 @@
+sudo: required
+language: generic
+services: docker
+notifications:
+  email: false
+if: sender != "traviscibot"
+
+# taken from: https://github.com/Strauman/travis-latexbuild
+tex-config:
+  - tex-scheme=small
+  - push-type=none
+  - build-pattern=resume/*.tex
+  - packages=preprint, titlesec, marvosym, enumitem
+
+script:
+  - docker pull strauman/travis-latexbuild:small # select small texlive scheme
+  - docker run --mount src=$TRAVIS_BUILD_DIR/,target=/repo,type=bind strauman/travis-latexbuild:small # also it here
+  - ls
+  - ls resume
+
+after_success:
+  - git config user.email "travis@travis-ci.org"
+  - git config user.name "traviscibot"
+  - mv resume/**.pdf resume/pdf/
+  - git add resume/pdf/**.pdf
+  - git commit -m "Run tex to generate pdf"
+  - git push https://ayan-b:${GITHUB_TOKEN}@github.com/ayan-b/resume-generator HEAD:master
