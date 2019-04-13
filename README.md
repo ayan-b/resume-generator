@@ -1,6 +1,6 @@
 # Resume Generator
 
-> Create a nice latex resume in seconds!
+> Focus on the data, not the style!
 
 ## Instructions
 
