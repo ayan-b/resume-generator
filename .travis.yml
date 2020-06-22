@@ -1,15 +1,7 @@
-sudo: required
-language: generic
+language: python
 services: docker
 notifications:
   email: false
-
-# taken from: https://github.com/Strauman/travis-latexbuild
-tex-config:
-  - tex-scheme=small
-  - push-type=none
-  - build-pattern=resume/*.tex
-  - packages=preprint, titlesec, marvosym, enumitem
 
 jobs:
   include:
@@ -17,8 +9,8 @@ jobs:
       if: branch = master AND type = push
 
 script:
-  - docker pull strauman/travis-latexbuild:small # select small texlive scheme
-  - docker run --mount src=$TRAVIS_BUILD_DIR/,target=/repo,type=bind strauman/travis-latexbuild:small # also it here
+  - docker run --mount src=$TRAVIS_BUILD_DIR/resume,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+  /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic main.tex"
   - ls
   - ls resume
 
