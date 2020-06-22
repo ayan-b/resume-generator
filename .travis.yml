@@ -1,13 +1,11 @@
+sudo: required
 language: python
 services: docker
 notifications:
   email: false
 
-install:
-  - pip3 install -r requirements.txt
-
-before_script:
-  - moban
+install: pip3 install -r requirements.txt
+before_script: moban
 
 jobs:
   include:
@@ -15,10 +13,8 @@ jobs:
       if: branch = master AND type = push
 
 script:
-  - docker run --mount src=$TRAVIS_BUILD_DIR/resume,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
+- docker run --mount src=$TRAVIS_BUILD_DIR/resume,target=/usr/src/tex,type=bind dxjoke/tectonic-docker
   /bin/sh -c "tectonic --keep-intermediates --reruns 0 main.tex; biber main; tectonic main.tex"
-  - ls
-  - ls resume
 
 after_success:
   - git config user.email "travis@travis-ci.org"
