@@ -1,7 +1,6 @@
 configuration:
   configuration: config/data.yml
   template_dir:
-    - .moban.dt
     - templates
   template_types:
     latex_type:
@@ -19,4 +18,4 @@ configuration:
         lstrip_blocks: true
 
 targets:
-  - resume/sw-resume.tex: sb2nov-resume.tex_jj2
+  - resume/main.tex: sb2nov-resume.tex_jj2

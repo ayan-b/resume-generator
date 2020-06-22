@@ -3,6 +3,12 @@ services: docker
 notifications:
   email: false
 
+install:
+  - pip3 install -r requirements.txt
+
+before_script:
+  - moban
+
 jobs:
   include:
     - stage: generate-pdf

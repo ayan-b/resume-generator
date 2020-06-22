@@ -32,8 +32,7 @@ experiences:
     position: Google Summer of Code Student
     period: May - August, 2019
     work:
-      - description: Implemented support more data formats for Xena Browser
-        (https://xenabrowser.net) in an ETL (ExtractTransform Load) pipeline.
+      - description: Implemented support more data formats for Xena Browser (https://xenabrowser.net) in an ETL (ExtractTransform Load) pipeline.
       - title: Technologies
         description: Python, Pandas, Numpy, Git, Continuous Integration, Unit Testing, AWS
   - company: Indian Institute of Technology, Bombay
